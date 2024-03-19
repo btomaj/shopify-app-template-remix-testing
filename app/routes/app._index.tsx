@@ -16,6 +16,8 @@ import {
 } from "@shopify/polaris";
 import { authenticate } from "../shopify.server";
 
+import { Component } from "./components/Component";
+
 export const loader = async ({ request }: LoaderFunctionArgs) => {
   await authenticate.admin(request);
 
@@ -85,6 +87,7 @@ export default function Index() {
 
   return (
     <Page>
+      <Component />
       <ui-title-bar title="Remix app template">
         <button variant="primary" onClick={generateProduct}>
           Generate a product
